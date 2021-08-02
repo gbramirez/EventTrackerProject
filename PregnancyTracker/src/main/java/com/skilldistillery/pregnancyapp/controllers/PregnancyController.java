@@ -2,6 +2,8 @@ package com.skilldistillery.pregnancyapp.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +28,7 @@ public class PregnancyController {
 	public List<Pregnancy> listPregnancies() {
 		return svc.allPregnancies();
 	}
-	
+
 	@GetMapping("pregnancies/{id}")
 	public Pregnancy showPregnancy(@PathVariable int id) {
 		return svc.show(id);
@@ -36,28 +38,27 @@ public class PregnancyController {
 	public Pregnancy createPregnancy(@RequestBody Pregnancy preg) {
 		return svc.create(preg);
 	}
-	
+
 	@PutMapping("pregnancy")
 	public Pregnancy updatePregnancy(@RequestBody Pregnancy preg) {
 		return svc.update(preg);
 	}
-	
+
 	@DeleteMapping("pregnancy/{id}")
-	public String deletePregnancy(@PathVariable int id) {
+	public String deletePregnancy(@PathVariable int id, HttpServletResponse res) {
 		try {
 			boolean deleted = svc.delete(id);
-			if(deleted) {
+			if (deleted) {
 				res.setStatus(204);
 				return "Deleted";
 			} else {
 				res.setStatus(404);
 				return "Not Found";
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			res.setStatus(400);
 			return "Failed to Delete";
 		}
 	}
-	
+
 }
