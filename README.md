@@ -12,7 +12,6 @@ The tracker allows the ability to create, update, and delete items from the data
 * [Eclipse](https://www.eclipse.org/ide/)</br>
 * [Git](https://git-scm.com/)</br>
 * [Java](https://en.wikipedia.org/wiki/Java_)</br>
-* [MVC / Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)<br>
 * [MySQL](https://www.mysql.com/)</br>
 * [Object-Oriented design](https://stackabuse.com/object-oriented-design-principles-in-java)</br>
 * [PostMan](https://www.postman.com/)<br>
