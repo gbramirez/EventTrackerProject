@@ -2,17 +2,10 @@
 
 ### Full-stack Spring/REST/JPA Project for Skill Distillery
 
-## Developer
-[Brian Ramirez](https://github.com/gbramirez)
-
-
 ## Overview
 Pregnancy Tracker is a gender-neutral pregnancy tracking app. Users can track a pregnancy via weeks and milestones.
 
-
-## REST Endpoints
-
-
+### Technologies
 * [Java](https://en.wikipedia.org/wiki/Java_)</br>
 * [Object-Oriented design](https://stackabuse.com/object-oriented-design-principles-in-java)</br>
 * [Eclipse](https://www.eclipse.org/ide/)</br>
@@ -22,6 +15,7 @@ Pregnancy Tracker is a gender-neutral pregnancy tracking app. Users can track a 
 * [Spring Framework](https://en.wikipedia.org/wiki/Spring_Framework#Spring_Boot)<br>
 * [MVC / Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)<br>
 
+## REST Endpoints
 
 ## Lessons Learned
 * How to utilize Postman as a development tool.
