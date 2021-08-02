@@ -1,5 +1,6 @@
 package com.skilldistillery.pregnancyapp.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,11 @@ public class Pregnancy {
 	private int id;
 
 	private int weeks;
+
+	private String milestones;
+
+	@Column(name = "due_date")
+	private String dueDate;
 
 	public Pregnancy() {
 		super();
@@ -34,10 +40,27 @@ public class Pregnancy {
 		this.weeks = weeks;
 	}
 
+	public String getMilestones() {
+		return milestones;
+	}
+
+	public void setMilestones(String milestones) {
+		this.milestones = milestones;
+	}
+
+	public String getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(String dueDate) {
+		this.dueDate = dueDate;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Pregnancy [id=").append(id).append(", weeks=").append(weeks).append("]");
+		builder.append("Pregnancy [id=").append(id).append(", weeks=").append(weeks).append(", milestones=")
+				.append(milestones).append(", dueDate=").append(dueDate).append("]");
 		return builder.toString();
 	}
 
