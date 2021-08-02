@@ -12,13 +12,6 @@ Pregnancy Tracker is a gender-neutral pregnancy tracking app. Users can track a 
 
 ## REST Endpoints
 
-<p float="left">
-<img src="media/pictures/git-logo.png" alt ="git" width="100" height="100" align="center"/>
-<img src="media/pictures/eclipse-logo.png" alt = "eclipse" width="150" height="150" align="center"/>
-<img src="media/pictures/java-logo.png" alt = "eclipse" width="75" height="100" style="margin-right: 25px" align="center"/>
-<img src="media/pictures/mySQL-logo.png" alt = "MySQL" width="100" height="100" style="margin-right: 25px" align="center"/>
-<img src="media/pictures/spring-logo.png" alt = "Spring MVC" width="260" height="70" style="margin-right: 25px" align="center"/>
-</p>
 
 * [Java](https://en.wikipedia.org/wiki/Java_)</br>
 * [Object-Oriented design](https://stackabuse.com/object-oriented-design-principles-in-java)</br>
