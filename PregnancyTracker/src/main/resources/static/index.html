@@ -1,62 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Pregnancy Tracker</title>
-
-<script src="js/script.js" charset="utf-8"></script>
-
-<!-- CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<!-- End CSS -->
-
-
-
+    <meta charset="UTF-8">
+    <title>Pregnancy App</title>
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 
-	<!-- NavBar -->
+    <h1>Pregnancy Table</h1>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="images/apple-touch-icon.png"></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+    <div id='pregnancyListDiv'>
+        <table id="pregnancyListTable"></table>
+    </div>
+    <hr>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Milestones</a></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#">About</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<!-- NavBar End -->
+    <div id='count'></div>
+    <hr>
 
-	<h1>Hello, pregs.</h1>
+    <div id='pregnancyDetails'></div>
+    <br>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+    <hr>
+
+    <h3>Add a Pregnancy to the Database</h3> <br>
+    <div id='newPregnancyFormDiv'>
+        <form action='api/pregnancy' method='post' id='newPregnancyForm' name='newPregnancyForm'>
+
+            <label for="weeks">Weeks: </label> <br>
+            <input type="number" name='weeks'> <br>
+
+            <label for="milestones">Milestones: </label> <br>
+            <textarea name='milestones' id="milestones" cols="30" rows="10"></textarea><br>
+
+            <label for="dueDate">Due Date: </label> <br>
+            <input type="date" name='dueDate'> <br>
+
+            <button name='submit'>Add New Pregnancy</button>
+        </form>
+    </div>
+
 </body>
+
 </html>
