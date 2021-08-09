@@ -139,21 +139,24 @@ function viewDetails(pregnancy) {
 	fm.appendChild(input);
 
 	let label = document.createElement('label');
+	let br = document.createElement('br');
 	label.for = 'weeks';
-	label.textContent = 'weeks:'
+	label.textContent = 'Weeks: '
 	fm.appendChild(label);
+	br = document.createElement('br');
+	fm.appendChild(br);
 	input = document.createElement('input');
 	input.type = 'text';
 	input.name = 'weeks';
 	input.id = 'weeks';
 	input.value = pregnancy.weeks;
 	fm.appendChild(input);
-	let br = document.createElement('br');
+	br = document.createElement('br');
 	fm.appendChild(br);
 
 	label = document.createElement('label');
 	label.for = 'milestones';
-	label.textContent = 'milestones:'
+	label.textContent = 'Milestones: '
 	fm.appendChild(label);
 	br = document.createElement('br');
 	fm.appendChild(br);
@@ -167,8 +170,10 @@ function viewDetails(pregnancy) {
 
 	label = document.createElement('label');
 	label.for = 'dueDate';
-	label.textContent = 'Due Date:'
+	label.textContent = 'Due Date: '
 	fm.appendChild(label);
+	br = document.createElement('br');
+	fm.appendChild(br);
 	input = document.createElement('input');
 	input.type = 'date';
 	input.name = 'dueDate';
