@@ -32,11 +32,11 @@ The tracker allows the ability to create, update, and delete items from the data
 |--------|-----------------------|------------------|----------------------------------|
 
 ## How to Run
-* 1. The user can view all current pregnancies from the homepage.
-* 2. The user can view the weeks, milestones, and due date of each pregnancy by selection.
-* 3. The user can update the pregnancy from the view form.
-* 4. The user can create a pregnancy using the form on the homepage.
-* 5. The user can delete a pregnancy from the database from the view form.
+* The user can view all current pregnancies from the homepage.
+* The user can view the weeks, milestones, and due date of each pregnancy by selection.
+* The user can update the pregnancy from the view form.
+* The user can create a pregnancy using the form on the homepage.
+* The user can delete a pregnancy from the database from the view form.
 
 ## Lessons Learned
 * How to utilize Postman as a development tool.
