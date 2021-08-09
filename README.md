@@ -31,6 +31,15 @@ The tracker allows the ability to create, update, and delete items from the data
 | DELETE |   `/api/pregnancy`    | Delete pregnancy | Remove a pregnancy from the db   |
 |--------|-----------------------|------------------|----------------------------------|
 
+## How to Run
+* The user can view all current pregnancies from the homepage.
+* The user can view the weeks, milestones, and due date of each pregnancy by selection.
+* The user can update the pregnancy from the view form.
+* The user can create a pregnancy using the form on the homepage.
+* The user can delete a pregnancy from the database from the view form.
+
 ## Lessons Learned
 * How to utilize Postman as a development tool.
 * Practice with CRUD implementations via MySQL Workbench.
+* Working with SPRING.
+* Working with REST.
