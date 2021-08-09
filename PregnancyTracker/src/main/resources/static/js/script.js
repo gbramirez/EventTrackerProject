@@ -49,11 +49,11 @@ function displayPregnancies(pregnancies) {
 	tr.appendChild(th);
 	th = document.createElement('th');
 
-	th.textContent = 'Milestones';
+	th.textContent = 'Details';
 	tr.appendChild(th);
 	th = document.createElement('th');
 
-	th.textContent = 'Due Date';
+	th.textContent = 'Delete';
 	tr.appendChild(th);
 	th = document.createElement('th');
 
