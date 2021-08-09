@@ -20,18 +20,16 @@ The tracker allows the ability to create, update, and delete items from the data
 
 ## REST Endpoints
 
-| Method |     URI            |  Request Body    |         Response Body            |
-|--------|--------------------|------------------|----------------------------------|
-| GET    | `/api/pregnancy`   |   View pregnancy |    Displays a selected pregnancy |
-|--------|--------------------|------------------|----------------------------------|
-| GET    | `/api/pregnancies` | List Pregnancies |  Displays all pregnancies in db  |
-|--------|--------------------|------------------|----------------------------------|
-| POST   | `/api/pregnancy`   | Create pregnancy | Add a pregnancy to the db        |
-|--------|--------------------|------------------|----------------------------------|
-| PUT    | `/api/pregnancy`   | Edit pregnancy   | Edit a pregnancy in the db       |
-|--------|--------------------|------------------|----------------------------------|
-| DELETE | `/api/pregnancy`   | Delete pregnancy | Remove a pregnancy from the db   |
-|--------|--------------------|------------------|----------------------------------|
+| Method |        URI            |  Request Body    |         Response Body            |
+|--------|-----------------------|------------------|----------------------------------|
+| GET    |`/api/pregnancies/{id}`| List Pregnancies |  Displays all pregnancies in db  |
+|--------|-----------------------|------------------|----------------------------------|
+| POST   |   `/api/pregnancy`    | Create pregnancy | Add a pregnancy to the db        |
+|--------|-----------------------|------------------|----------------------------------|
+| PUT    |   `/api/pregnancy`    | Edit pregnancy   | Edit a pregnancy in the db       |
+|--------|-----------------------|------------------|----------------------------------|
+| DELETE |   `/api/pregnancy`    | Delete pregnancy | Remove a pregnancy from the db   |
+|--------|-----------------------|------------------|----------------------------------|
 
 ## Lessons Learned
 * How to utilize Postman as a development tool.
