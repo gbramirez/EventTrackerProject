@@ -3,20 +3,17 @@
 </table> -->
 
 
-<div class="jumbotron">
+<div class="jumbotron container" style="text-align: center;">
   <h1 class="display-4">Pregnancy Tracker</h1>
-  <p class="lead">Welcome to the world's most useless Pregnancy Tracker!</p>
+  <p class="lead">Welcome to the Pregnancy Tracker!</p>
   <hr class="my-4">
   <p>I am still trying to figure out exactly what it's for!</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
-  </p>
 </div>
 
-<div id="pregnancyList" class="pregnancyList table table-striped" *ngIf="!selected && !selectedAddPregnancy">
-  <table class="pregnancyListTable">
+<div id="pregnancyList" class="pregnancyList" *ngIf="!selected && !selectedAddPregnancy">
+  <table class="table table-striped table-hover">
 
-    <thead>
+    <thead class="thead-dark">
       <tr>
         <th>Weeks</th>
         <th>Milestone</th>
@@ -96,15 +93,16 @@
   <div *ngIf="selected && !editPregnancy">
     <h2>Pregnancy ID: {{selected.id}}</h2>
   </div>
-  <div class="pregnancyDetails table table-striped" id="pregnancyDetails" *ngIf="selected && !editPregnancy">
-    <table class="pregnancyDetailsTable">
+  <div class="pregnancyDetails" id="pregnancyDetails" *ngIf="selected && !editPregnancy">
+    <table class="table">
       <thead>
         <tr>
           <th> ID </th>
           <th> Weeks </th>
           <th> Milestone </th>
           <th> Due Date </th>
-          <th> Update | Delete </th>
+          <th> Update </th>
+          <th> Delete </th>
         </tr>
       </thead>
       <tr>
@@ -112,8 +110,8 @@
         <td>{{selected.weeks}}</td>
         <td>{{selected.milestones}}</td>
         <td>{{selected.dueDate }}</td>
-        <button type="button"(click)="setEditPregnancy()">Update</button>
-        <button type="button"(click)="deletePregnancy(selected.id)">Delete</button>
+        <td><button type="button"(click)="setEditPregnancy()">Update</button></td>
+        <td><button type="button"(click)="deletePregnancy(selected.id)">Delete</button></td>
       </tr>
     </table>
     <div class="backToHomeButtonDiv">
@@ -137,8 +135,8 @@
       <input type="text" name="milestones" [(ngModel)]="editPregnancy.milestones"><br>
       <label for="dueDate">Due Date</label><br>
       <input type="text" name="dueDate" [(ngModel)]="editPregnancy.dueDate"><br>
-      <button class="btn btn-outline-success" (click)="updatePregnancy(editPregnancy)">Update</button>
-      <button class="btn btn-outline-light offset-1" (click)="editPregnancy = null">Cancel</button>
+      <button class="button" (click)="updatePregnancy(editPregnancy)">Update</button>
+      <button class="button" (click)="editPregnancy = null">Cancel</button>
     </form>
   </div>
 </div>
