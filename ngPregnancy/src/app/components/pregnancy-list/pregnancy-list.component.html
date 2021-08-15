@@ -1,0 +1,144 @@
+<!-- <table>
+  <tr *ngFor="let pregnancy of pregnancies"> {{pregnancy | json}} </tr>
+</table> -->
+
+
+<div class="jumbotron">
+  <h1 class="display-4">Pregnancy Tracker</h1>
+  <p class="lead">Welcome to the world's most useless Pregnancy Tracker!</p>
+  <hr class="my-4">
+  <p>I am still trying to figure out exactly what it's for!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
+  </p>
+</div>
+
+<div id="pregnancyList" class="pregnancyList table table-striped" *ngIf="!selected && !selectedAddPregnancy">
+  <table class="pregnancyListTable">
+
+    <thead>
+      <tr>
+        <th>Weeks</th>
+        <th>Milestone</th>
+        <th>Due Date</th>
+        <th>Details</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let pregnancy of pregnancies">
+        <td>{{pregnancy.weeks}}</td>
+        <td>{{pregnancy.milestones}}</td>
+        <td>{{pregnancy.dueDate}}</td>
+        <td><button (click)="displayPregnancy(pregnancy)">Details</button></td>
+        <td> <button (click)="deletePregnancy(pregnancy.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="addPregnancyButtonDiv" *ngIf="!selected && !selectedAddPregnancy">
+  <button type="button" (click)="displayAddPregnancyForm(newPregnancy)">Add New Pregnancy</button>
+</div>
+<br>
+
+<div id='pregnancyDetails' *ngIf="selected && !editPregnancy  ">
+  <p>{{selected.id}}</p>
+  <p>{{selected.weeks}}</p>
+  <p>{{selected.milestones}}</p>
+  <p>{{selected.dueDate}}</p>
+  <button (click)="displayTable()">Back</button>
+  <button (click)="setEditPregnancy()">Edit</button>
+</div>
+
+<div class="row">
+  <div class="titleBar d-flex justify-content-center offset-3 col-4" *ngIf="selected && editPregnancy">
+    <h2>Update Pregnancy ID: {{editPregnancy.id}}</h2>
+  </div>
+  <div id="updatePregnancy" class="updatePregnancy">
+    <form class="updatePregnancyForm col-4" *ngIf="editPregnancy">
+      <label for="weeks">Weeks</label><br>
+      <input type="number" name="weeks" [(ngModel)]="editPregnancy.weeks"><br>
+      <label for="milestone">Milestone</label><br>
+      <input type="text" name="milestone" [(ngModel)]="editPregnancy.milestones"><br>
+      <label for="dueDate">Due Date</label><br>
+      <input type="text" name="dueDate" [(ngModel)]="editPregnancy.dueDate"><br>
+
+      <button type="button" (click)="updatePregnancy(editPregnancy)">Update</button>
+      <button type="button" (click)="editPregnancy = null">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div id="addPregnancy" class="d-flex justify-content-center addPregnancy col-4">
+    <form *ngIf="addPregnancy && selectedAddPregnancy">
+      <h4>Add New Pregnancy</h4>
+      <label for="weeks">Weeks</label><br>
+      <input type="text" name="weeks" [(ngModel)]="newPregnancy.weeks"><br>
+      <label for="milestone">Milestone</label><br>
+      <input type="text" name="milestone" [(ngModel)]="newPregnancy.milestones"><br>
+      <label for="dueDate">Due Date</label><br>
+      <input type="text" name="dueDate" [(ngModel)]="newPregnancy.dueDate"><br>
+      <button type="button" (click)="addPregnancy()">Add Pregnancy</button>
+    </form>
+  </div>
+  <div class="backToHomeButtonDiv" *ngIf="selectedAddPregnancy">
+    <br>
+    <button type="button" (click)="displayTable()">Back to Pregnancy List</button>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div *ngIf="selected && !editPregnancy">
+    <h2>Pregnancy ID: {{selected.id}}</h2>
+  </div>
+  <div class="pregnancyDetails table table-striped" id="pregnancyDetails" *ngIf="selected && !editPregnancy">
+    <table class="pregnancyDetailsTable">
+      <thead>
+        <tr>
+          <th> ID </th>
+          <th> Weeks </th>
+          <th> Milestone </th>
+          <th> Due Date </th>
+          <th> Update | Delete </th>
+        </tr>
+      </thead>
+      <tr>
+        <td>{{selected.id}}</td>
+        <td>{{selected.weeks}}</td>
+        <td>{{selected.milestones}}</td>
+        <td>{{selected.dueDate }}</td>
+        <button type="button"(click)="setEditPregnancy()">Update</button>
+        <button type="button"(click)="deletePregnancy(selected.id)">Delete</button>
+      </tr>
+    </table>
+    <div class="backToHomeButtonDiv">
+      <br>
+      <button (click)="displayTable()">Back to Pregnancy List</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="titleBar d-flex justify-content-center offset-3 col-4" *ngIf="selected && editPregnancy">
+    <h2>Update {{editPregnancy.id}}</h2>
+  </div>
+  <div id="updatePregnancy" class="updatePregnancy">
+    <form class="updatePregnancyForm col-4" *ngIf="editPregnancy">
+      <label for="id">ID</label><br>
+      <input type="text" name="id" [(ngModel)]="editPregnancy.id"><br>
+      <label for="weeks">Weeks</label><br>
+      <input type="number" name="weeks" [(ngModel)]="editPregnancy.weeks"><br>
+      <label for="milestones">Milestone</label><br>
+      <input type="text" name="milestones" [(ngModel)]="editPregnancy.milestones"><br>
+      <label for="dueDate">Due Date</label><br>
+      <input type="text" name="dueDate" [(ngModel)]="editPregnancy.dueDate"><br>
+      <button class="btn btn-outline-success" (click)="updatePregnancy(editPregnancy)">Update</button>
+      <button class="btn btn-outline-light offset-1" (click)="editPregnancy = null">Cancel</button>
+    </form>
+  </div>
+</div>

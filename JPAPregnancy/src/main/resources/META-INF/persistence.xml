@@ -9,7 +9,7 @@
 
 		<!-- list entities here -->
 
-		<class>com.skilldistillery.jpavideostore.entities.pregnancyapp.entities.Pregnancy</class>
+		<class>com.skilldistillery.pregnancyapp.entities.Pregnancy</class>
 
 		<!-- end entities here -->
 

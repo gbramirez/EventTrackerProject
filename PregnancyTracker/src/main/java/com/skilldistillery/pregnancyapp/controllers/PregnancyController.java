@@ -2,9 +2,11 @@ package com.skilldistillery.pregnancyapp.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +21,7 @@ import com.skilldistillery.pregnancyapp.services.PregnancyService;
 
 @RequestMapping("api")
 @RestController
+@CrossOrigin({ "*", "http://localhost:4210" })
 public class PregnancyController {
 
 	@Autowired
@@ -34,17 +37,39 @@ public class PregnancyController {
 		return svc.show(id);
 	}
 
-	@PostMapping("pregnancy")
-	public Pregnancy createPregnancy(@RequestBody Pregnancy preg) {
-		return svc.create(preg);
+	@PostMapping("pregnancies")
+	public Pregnancy createPregnancy(@RequestBody Pregnancy pregnancy, HttpServletResponse res, HttpServletRequest req) {
+		pregnancy = svc.create(pregnancy);
+		try {
+			if(pregnancy == null) {
+				res.setStatus(404);
+			}else {
+				res.setStatus(201);
+				StringBuffer url = req.getRequestURL();
+				url.append("/").append(pregnancy.getId());
+				res.setHeader("Location", url.toString());
+			}
+		} catch (Exception e) {
+			res.setStatus(400);
+			pregnancy = null;
+		}
+		return pregnancy;
 	}
 
-	@PutMapping("pregnancy")
-	public Pregnancy updatePregnancy(@RequestBody Pregnancy preg) {
-		return svc.update(preg);
+	@PutMapping("pregnancies")
+	public Pregnancy updatePregnancy(@RequestBody Pregnancy pregnancy, HttpServletResponse res) {
+		try {
+			pregnancy = svc.update(pregnancy);
+		} catch (Exception e) {
+			pregnancy = null;
+		}
+		if (pregnancy == null) {
+			res.setStatus(404);
+		}
+		return pregnancy;
 	}
 
-	@DeleteMapping("pregnancy/{id}")
+	@DeleteMapping("pregnancies/{id}")
 	public String deletePregnancy(@PathVariable int id, HttpServletResponse res) {
 		try {
 			boolean deleted = svc.delete(id);
